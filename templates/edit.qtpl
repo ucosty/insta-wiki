@@ -1,0 +1,34 @@
+{% import "github.com/ucosty/insta-wiki/models" %}
+
+{% func EditContent(page *models.Page) %}
+<div class="editor wrap">
+    {% if !page.IsNewPage %}
+    <nav class="tabs">
+        <a href="/wiki/{%s page.Path %}/history">History</a>
+        <a href="/wiki/{%s page.Path %}/edit" class="selected">Edit</a>
+        <a href="/wiki/{%s page.Path %}">Read</a>
+    </nav>
+    {% endif %}
+
+    <form action="/wiki/{%s page.Path %}" method="post">
+        <div class="metadata">
+            <label for="title">Page Title</label>
+            <input type="text" name="title" id="title" placeholder="Page Title" value="{%s page.Title %}">
+
+            <label for="path">Page Path</label>
+            <input type="text" name="path" id="path" placeholder="Page Path" value="{%s page.Path %}">
+        </div>
+
+        <textarea name="body" id="markdown-editor" cols="30" rows="10">{%s page.BodyMarkdown %}</textarea>
+        <input type="submit" value="Save">
+    </form>
+</div>
+
+<script>
+var editor = new SimpleMDE({ element: document.getElementById("markdown-editor") });
+</script>
+{% endfunc %}
+
+{% func Edit(page *models.Page) %}
+{%= Base(page.Title, EditContent(page)) %}
+{% endfunc %}

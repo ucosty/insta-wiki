@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <div class="wrap">
+        <h1>Insta-Wiki</h1>
+        <form action="/search">
+            <input type="text" name="query" id="query" placeholder="Search">
+        </form>
+        <nav>
+            <a href="/wiki/new">New Page</a>
+        </nav>
+    </div>
+</header>
+
+<div class="editor wrap">
+    <form action="/wiki/{%s page.Path %}" method="post">
+        <div class="metadata">
+            <label for="title">Page Title</label>
+            <input type="text" name="title" id="title" placeholder="Page Title" value="">
+
+            <label for="path">Page Path</label>
+            <input type="text" name="path" id="path" placeholder="Page Path" value="">
+        </div>
+
+        <textarea name="body" id="markdown-editor" cols="30" rows="10"></textarea>
+        <input type="submit" value="Save">
+    </form>
+</div>
+
+<div class="content wrap">
+    <nav class="tabs">
+        <a href="/" class="selected">Read</a>
+        <a href="/">Edit</a>
+        <a href="/">History</a>
+    </nav>
+
+    <h1>Welcome to Insta-Wiki!</h1>
+    <p>This is a test</p>
+    <ul>
+        <li><a href="/wiki/test">test</a></li>
+        <li><a href="/wiki/yay-test">yay-test</a></li>
+        <li><a href="/wiki/bar">bar</a></li>
+    </ul>
+    <h3>Level three title</h3>
+    <ul>
+        <li>This is a test Bar test</li>
+        <li>what is going on here?</li>
+    </ul>
+    <p>This is a test an ordered item list</p>
+    <ol>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 4</li>
+        <li>Item 5</li>
+    </ol>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    <h3>Where does it come from?</h3>
+    <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+    <h3>Where can I get some?</h3>
+    <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable. The generated Lorem Ipsum is therefore always free from repetition, injected humour, or non-characteristic words etc.</p>
+</div>
+</body>
+</html>

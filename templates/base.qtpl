@@ -1,0 +1,30 @@
+{% func Base(title string, page string) %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{%s title %} | Insta-Wiki</title>
+    <link rel="stylesheet" href="/static/style.css">
+
+    <link rel="stylesheet" href="/static/simplemde.min.css">
+    <script src="/static/simplemde.min.js"></script>
+
+    <link rel="stylesheet" href="/static/highlight.min.css">
+    <script src="/static/highlight.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="wrap">
+        <a href="/"><h1>Insta-Wiki</h1></a>
+        <form action="/search">
+            <input type="text" name="query" id="query" placeholder="Search">
+        </form>
+        <nav>
+            <a href="/wiki/new">New Page</a>
+        </nav>
+    </div>
+</header>
+
+<div class="content wrap">{%s= page %}</div>
+</body>
+</html>
+{% endfunc %}

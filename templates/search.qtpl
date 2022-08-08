@@ -1,0 +1,17 @@
+{% import "github.com/ucosty/insta-wiki/models" %}
+
+{% func SearchContent(query string, page int64, results []models.Page) %}
+<div class="content wrap">
+<ol>
+    {% for _, result := range results %}
+    <li>
+        <a href="/wiki/{%s result.Path %}">{%s result.Title %}</a>
+    </li>
+    {% endfor %}
+</ol>
+</div>
+{% endfunc %}
+
+{% func Search(query string, page int64, results []models.Page) %}
+{%= Base("Search", SearchContent(query, page, results)) %}
+{% endfunc %}

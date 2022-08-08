@@ -1,0 +1,157 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { font-family: Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif; }
+
+header {
+    background-color: #e87800;
+    height: 40px;
+}
+
+.wrap {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+header .wrap {
+    display: flex;
+    justify-content: space-between;
+}
+
+header h1 {
+    padding: 0 8px;
+    line-height: 40px;
+    color: #fff;
+    font-size: 18px;
+}
+
+header a {
+    text-decoration: none;
+}
+
+header a h1:hover {
+    background-color: #b35d00;
+}
+
+header form {
+    height: 100%;
+    margin: 4px;
+}
+
+header input[type=text] {
+    background-color: #b35d00;
+    border: 1px solid #ffdaa6;
+    padding: 4px;
+    height: 32px;
+    color: #fff;
+    border-radius: 3px;
+}
+
+header nav a {
+    display: inline-block;
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 8px;
+}
+
+header nav a:hover {
+    background-color: #b35d00;
+}
+
+.content {
+    margin: 16px auto;
+    padding: 0 4px;
+}
+
+.content h1 {
+    font-size: 20px;
+    line-height: 1.6em;
+    color: #333;
+}
+
+.content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+    line-height: 1.6em;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.content p {
+    line-height: 1.6em;
+    margin-bottom: 16px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    color: #333;
+}
+
+.content a {
+    color: #165090;
+}
+
+.content a:hover {
+    color: #e94c1b;
+}
+
+.content ul, .content ol {
+    margin-left: 24px;
+    margin-bottom: 16px;
+}
+
+li {
+    line-height: 1.6em;
+}
+
+.editor .metadata {
+    display: flex;
+    margin: 16px 0;
+    align-items: center;
+    gap: 10px;
+}
+
+.editor label {
+    display: inline-block;
+    margin-right: 8px;
+    flex: 0 0 auto;
+}
+
+.editor input[type=text] {
+    width: 100%;
+    padding: 8px;
+}
+
+.editor input[type=submit] {
+    margin: 16px 0;
+    padding: 8px;
+}
+
+.editor textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+nav.tabs {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+nav.tabs a {
+    text-decoration: none;
+    border: 1px solid transparent;
+    padding: 4px 8px;
+    display: inline-block;
+    color: #333;
+    margin-left: 8px;
+}
+
+nav.tabs a.selected {
+    border: 1px solid #ccc;
+    border-bottom: 1px solid #fff;
+    background-color: #eee;
+}
+
+nav.tabs a:hover {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-bottom: 1px solid #eee;
+}

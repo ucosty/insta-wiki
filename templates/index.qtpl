@@ -1,0 +1,20 @@
+{% import "github.com/ucosty/insta-wiki/models" %}
+
+{% func IndexContent(page *models.Page) %}
+<div class="content wrap">
+    <nav class="tabs">
+        <a href="/wiki/{%s page.Path %}/history">History</a>
+        <a href="/wiki/{%s page.Path %}/edit">Edit</a>
+        <a href="/wiki/{%s page.Path %}" class="selected">Read</a>
+    </nav>
+
+    <h1>{%s page.Title %}</h1>
+    <p>{%s= page.BodyFormatted %}</p>
+</div>
+
+<script>hljs.highlightAll();</script>
+{% endfunc %}
+
+{% func Index(page *models.Page) %}
+{%= Base(page.Title, IndexContent(page)) %}
+{% endfunc %}

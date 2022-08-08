@@ -1,0 +1,22 @@
+{% import "github.com/ucosty/insta-wiki/models" %}
+
+{% func HistoryContent(page *models.Page, results []models.Page) %}
+<div class="content wrap">
+    <nav class="tabs">
+        <a href="/wiki/{%s page.Path %}/history" class="selected">History</a>
+        <a href="/wiki/{%s page.Path %}/edit">Edit</a>
+        <a href="/wiki/{%s page.Path %}">Read</a>
+    </nav>
+    <ol>
+        {% for _, result := range results %}
+        <li>
+            <a href="/wiki/{%s result.Path %}">{%s result.Title %}</a>
+        </li>
+        {% endfor %}
+    </ol>
+</div>
+{% endfunc %}
+
+{% func History(page *models.Page, results []models.Page) %}
+{%= Base(page.Title, HistoryContent(page, results)) %}
+{% endfunc %}
